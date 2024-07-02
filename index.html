@@ -64,26 +64,51 @@
         }
         .about-me-container {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .about-me-text {
-            flex: 1;
-            margin-left: 20px;
+            max-width: 800px;
+            margin: 20px 0;
             padding: 20px;
             background-color: #444;
             border-radius: 8px;
         }
         .about-me-image {
-            flex: 0 0 150px; /* Adjust the width as needed */
+            width: 150px; /* Adjust the width as needed */
             height: 150px; /* Adjust the height as needed */
             background-color: #ccc; /* Placeholder for image */
             border-radius: 8px;
             overflow: hidden;
+            margin-bottom: 20px;
         }
         .about-me-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        .curriculum-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #005bb5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .curriculum-link:hover {
+            background-color: #003f80;
+        }
+        .fun-image {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .fun-image img {
+            max-width: 100%;
+            border-radius: 8px;
         }
         p, ul {
             line-height: 1.6;
@@ -127,38 +152,17 @@
             <h2>About Me</h2>
             <div class="about-me-container">
                 <div class="about-me-image">
-                    <img src="./FundoCinza.png"> <!-- Replace with your image URL -->
+                    <img src="https://example.com/your-photo.jpg" alt="Francisco Dahab"> <!-- Replace with your image URL -->
                 </div>
                 <div class="about-me-text">
                     <p>Hello! I am Francisco Dahab, a Master's student at the Institute of Theoretical Physics of the São Paulo State University (IFT-UNESP). My research currently focuses on Particle Physics, particularly I'm looking for ways to investigate new physics in future Lepton colliders.</p>
                 </div>
+                <a class="curriculum-link" href="path-to-your-curriculum.pdf" target="_blank">View My Curriculum</a>
             </div>
         </section>
-        
-        <section id="interests">
-            <h2>My Interests</h2>
-            <p>I am currently interested in a multitude of ideas in High Energy Physics. Some of the most intriguing to me at the moment are:</p>
-            <ul>
-                <li>Beyond Standard Model Phenomenology</li>
-                <li>Quantum Field Theory</li>
-                <li>Scattering Amplitudes</li>
-                <li>Non-Perturbative Phenomena in QFT</li>
-            </ul>
-        </section>
-        
-        <section id="links">
-            <h2>Interesting Links</h2>
-            <ul>
-                <li><a href="https://link1.com" target="_blank">Link 1</a></li>
-                <li><a href="https://link2.com" target="_blank">Link 2</a></li>
-                <li><a href="https://link3.com" target="_blank">Link 3</a></li>
-                <li><a href="https://link4.com" target="_blank">Link 4</a></li>
-            </ul>
-        </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>If you would like to get in touch, please email me at <a href="mailto:f.dahab@unesp.br">f.dahab@unesp.br</a>.</p>
+        <section class="fun-image">
+            <img src="https://example.com/your-fun-image.jpg" alt="A fun image"> <!-- Replace with your fun image URL -->
         </section>
     </div>
 </body>
