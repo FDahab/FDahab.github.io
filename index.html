@@ -44,6 +44,23 @@
             border-bottom: 2px solid #005bb5;
             padding-bottom: 5px;
         }
+        .about-me-container {
+            display: flex;
+            align-items: flex-start;
+        }
+        .about-me-text {
+            flex: 1;
+            margin-left: 20px;
+            padding: 20px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+        }
+        .about-me-image {
+            flex: 0 0 150px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+            background-color: #ccc; /* Placeholder for image */
+            border-radius: 8px;
+        }
         p, ul {
             line-height: 1.6;
         }
@@ -76,12 +93,19 @@
         
         <section id="about-me">
             <h2>About Me</h2>
-            <p>Hello! I am Francisco Dahab, a Master's student at the Institute of Theoretical Physics of the São Paulo State University (IFT-UNESP). My research currently focuses on Particle Physics, particularly I'm looking for ways to investigate new physics in future Lepton colliders.</p>
+            <div class="about-me-container">
+                <div class="about-me-image">
+                    <!-- Placeholder for your image. Replace with <img src="your-image-url.jpg" alt="Francisco Dahab"> -->
+                </div>
+                <div class="about-me-text">
+                    <p>Hello! I am Francisco Dahab, a Master's student at the Institute of Theoretical Physics of the São Paulo State University (IFT-UNESP). My research currently focuses on Particle Physics, particularly I'm looking for ways to investigate new physics in future Lepton colliders.</p>
+                </div>
+            </div>
         </section>
         
         <section id="interests">
             <h2>My Interests</h2>
-            <p>Beyond my primary area of research, I am always interested in a multitude of ideas in High Energy Physics. Some of the most intriguing to me at the moment are:</p>
+            <p>I am currently interested in a multitude of ideas in High Energy Physics. Some of the most intriguing to me at the moment are:</p>
             <ul>
                 <li>Beyond Standard Model Phenomenology</li>
                 <li>Quantum Field Theory</li>
