@@ -14,7 +14,11 @@
             color: #fff;
             display: flex;
             justify-content: center;
+            opacity: 0; /* Start hidden for fade-in effect */
+            transition: opacity 0.5s ease-in-out; /* Fade-in transition */
         }
+        .fade-in {
+            opacity: 1; /* Visible state for fade-in effect */
         .content {
             max-width: 1000px;
             width: 100%;
@@ -111,7 +115,7 @@
             <div class="interest-container">
                 <h3>Beyond Standard Model Physics</h3>
                 <p>The Standard Model is an excellent Effective Field Theory, able to match, to an obscene level of precision, any high energy physics experiment we are currently
-                able to make. Nevertheless, it is undeniably incomplete, there are simply too many things it is not able to predict. To name a few: there are no mechanisms
+                able to make. Nevertheless, it is undeniably incomplete, there are simply too many things outside colliders it is not able to predict. To name a few: there are no mechanisms
                 to give mass to neutrinos in the Standard Model; No UV complete theory of Quantum Gravity; No explanation to fine tuning/hierarchy problems; and many more.
                 </p>
                 <p> Evidently then, there's much work to be done, both theoretical and experimental. How do we build models to address a few of these shortcomings? Given
@@ -123,10 +127,14 @@
             </div>
 
             <div class="interest-container">
-                <h3>Quantum Field Theory</h3>
-                <p>Quantum Field Theory is (arguably, but not really arguable) the most powerful framework we currently have in physics. It's incredibly versatile but still 
-                capable of immense precision. And yet, there is a lot we don't understand about it, particularly, we are very ignorant about what happens in non-perturbative regimes.
-                There is a se
+                <h3>Quantum Field Theory and its non-perturbative aspects</h3>
+                <p>Quantum Field Theory is (arguably, but not really arguable) the most powerful framework we currently have in physics, able to unite the many triumphs of Quantum 
+                Mechanics with Special Relativity, but at this point, its applications have transcended that scope, with people working on ideas in ranging from condensed matter physics to
+                even pure math. 
+                
+                QFT is incredibly versatile but still capable of immense precision with many people are working on many different aspects of it. Yet, even though we've come a long way, there is a lot we don't 
+                understand about it. We are particularly ignorant when we cannot use pertubative expansions, be it because we have no small parameter to expand around, or 
+                because the behaviour is genuinely non-analytic, there are clear big gaps in our understanding. Many such
                 </p>
             </div>
 
@@ -142,12 +150,13 @@
                 restrictions to the behaviour of the amplitude, how much of its form can one deduce without having to jump through the hoops of QFT. And can we learn new lessons
                 about nature by doing so?</p>
             </div>
-
-            <div class="interest-container">
-                <h3>Interest 4</h3>
-                <p>Description of the main idea and why you find it interesting. You can elaborate on the specific aspects that captivate your attention and any related work or projects you are involved in.</p>
-            </div>
         </section>
     </div>
+<script>
+        // JavaScript to add fade-in class on page load
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+    </script>
 </body>
 </html>
