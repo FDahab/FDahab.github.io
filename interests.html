@@ -19,6 +19,7 @@
         }
         .fade-in {
             opacity: 1; /* Visible state for fade-in effect */
+        }
         .content {
             max-width: 1000px;
             width: 100%;
@@ -66,20 +67,36 @@
             border-bottom: 2px solid #005bb5; /* Blue underline */
             padding-bottom: 5px;
         }
-        .interest-container {
+        .intro-text, .interest-content {
             background-color: #444;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
+            display: none;
         }
-        .interest-container h3 {
-            color: #fff;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .interest-container p {
+        .intro-text p, .interest-content p {
             color: #ccc;
             text-align: justify;
+        }
+        .intro-text {
+            display: block; /* Show introductory text by default */
+        }
+        .interest-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .interest-box {
+            background-color: #005bb5;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            flex: 1 1 calc(50% - 20px); /* Responsive design */
+            transition: background-color 0.3s ease;
+        }
+        .interest-box:hover {
+            background-color: #003f80;
         }
         p, ul {
             line-height: 1.6;
@@ -112,21 +129,38 @@
         <section id="interests">
             <h2>My (Current) Interests</h2>
 
-            <div class="interest-container">
+            <div class="intro-text" id="intro-text">
+                <p>Welcome to my interests page. Here you will find detailed information about the various topics I am currently interested in. Click on any of the boxes below to learn more about each interest.</p>
+            </div>
+
+            <div class="interest-boxes">
+                <div class="interest-box" data-target="interest-1">
+                    <h3>Beyond Standard Model Physics</h3>
+                </div>
+                <div class="interest-box" data-target="interest-2">
+                    <h3>Quantum Field Theory and its non-perturbative aspects</h3>
+                </div>
+                <div class="interest-box" data-target="interest-3">
+                    <h3>Scattering Amplitudes</h3>
+                </div>
+                <div class="interest-box" data-target="interest-4">
+                    <h3>Interest 4</h3>
+                </div>
+            </div>
+
+            <div class="interest-content" id="interest-1">
                 <h3>Beyond Standard Model Physics</h3>
                 <p>The Standard Model is an excellent Effective Field Theory, able to match, to an obscene level of precision, any high energy physics experiment we are currently
                 able to make. Nevertheless, it is undeniably incomplete, there are simply too many things outside colliders it is not able to predict. To name a few: there are no mechanisms
-                to give mass to neutrinos in the Standard Model; No UV complete theory of Quantum Gravity; No explanation to fine tuning/hierarchy problems; and many more.
-                </p>
-                <p> Evidently then, there's much work to be done, both theoretical and experimental. How do we build models to address a few of these shortcomings? Given
+                to give mass to neutrinos in the Standard Model; No UV complete theory of Quantum Gravity; No explanation to fine tuning/hierarchy problems; and many more.</p>
+                <p>Evidently then, there's much work to be done, both theoretical and experimental. How do we build models to address a few of these shortcomings? Given
                 models that do, where will their deviations from Standard Model predictions manifest most strongly given what we can do experimentally? How do we build better
                 experiments or better utilize the ones we already have? These are all equally important questions, and we need as a community, people to work on all of them,
                 and most of all, work together. I am currently more interested in the theoretical side of things, working on trying to answer the first two questions, particularly
-                given that the next generation of colliders will be precision machines. 
-                </p>
+                given that the next generation of colliders will be precision machines.</p>
             </div>
 
-            <div class="interest-container">
+            <div class="interest-content" id="interest-2">
                 <h3>Quantum Field Theory and its non-perturbative aspects</h3>
                 <p>Quantum Field Theory is (arguably, but not really arguable) the most powerful framework we currently have in physics, able to unite the many triumphs of both Quantum 
                 Mechanics with Special Relativity, but at this point, its applications have transcended that scope, with people working on ideas ranging from condensed matter physics to
@@ -141,7 +175,7 @@
                 </p>
             </div>
 
-            <div class="interest-container">
+            <div class="interest-content" id="interest-3">
                 <h3>Scattering Amplitudes</h3>
                 <p>Although extremely predictive, Quantum Field Theory forces us to pay a price for building local and manifest Lorentz Invariant Lagrangians. 
                 Particularly, if our theory includes massless particles with spin greater or equal to 1, we need Gauge Invariance so the degrees of freedom match. This, especially for non-Abelian Gauge
@@ -149,17 +183,4 @@
                 Faddeev and Popov taught us, we need unphysical ghost as well.</p>
                 <p>For a 4 gluon amplitude in Yang Mills, if we are to compute the cross-section in the
                 context of QFT, we would need to deal with well over 1000 terms, and yet, upon simplification, the result is incredibly simple. A natural question is then,
-                surely there's a better way of doing this? The program of On-Shell Amplitudes is precisely dedicated to ideas like this. By imposing only the most fundamental
-                restrictions to the behaviour of the amplitude, how much of its form can one deduce without having to jump through the hoops of QFT. And can we learn new lessons
-                about nature by doing so? This to me is profoundly interesting.</p>
-            </div>
-        </section>
-    </div>
-<script>
-        // JavaScript to add fade-in class on page load
-        window.addEventListener('load', function() {
-            document.body.classList.add('fade-in');
-        });
-    </script>
-</body>
-</html>
+                surely there's a better way of doing this? The program of On-Shell
