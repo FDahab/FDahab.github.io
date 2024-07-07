@@ -83,8 +83,8 @@
         }
         .interest-boxes {
             display: flex;
-            flex-wrap: wrap;
             gap: 20px;
+            justify-content: space-between;
         }
         .interest-box {
             background-color: #005bb5;
@@ -92,7 +92,8 @@
             padding: 20px;
             border-radius: 8px;
             cursor: pointer;
-            flex: 1 1 calc(50% - 20px); /* Responsive design */
+            flex: 1;
+            text-align: center;
             transition: background-color 0.3s ease;
         }
         .interest-box:hover {
@@ -130,8 +131,7 @@
             <h2>My (Current) Interests</h2>
 
             <div class="intro-text" id="intro-text">
-                <p>Physics is an incredibly wide area, and even within High Energy Physics, interesting topics are far too many to list. 
-                The idea here is to give a very brief overview of a few topics I am currently interested in and what makes them so interesting.</p>
+                <p>Welcome to my interests page. Here you will find detailed information about the various topics I am currently interested in. Click on any of the boxes below to learn more about each interest.</p>
             </div>
 
             <div class="interest-boxes">
@@ -139,7 +139,7 @@
                     <h3>Beyond Standard Model Physics</h3>
                 </div>
                 <div class="interest-box" data-target="interest-2">
-                    <h3>Quantum Field Theory and its non-perturbative aspects</h3>
+                    <h3>Quantum Field Theory</h3>
                 </div>
                 <div class="interest-box" data-target="interest-3">
                     <h3>Scattering Amplitudes</h3>
