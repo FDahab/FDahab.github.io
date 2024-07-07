@@ -223,9 +223,12 @@
                     content.classList.remove('active');
                 });
 
-                // Show the clicked content
-                var targetId = box.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
+                // Wait for the collapse animation to finish
+                setTimeout(() => {
+                    // Show the clicked content
+                    var targetId = box.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                }, 500); // Match this duration to the CSS transition duration
             });
         });
     </script>
