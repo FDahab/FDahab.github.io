@@ -222,12 +222,17 @@
             box.addEventListener('click', function() {
                 // Hide all content sections
                 document.querySelectorAll('.intro-text, .interest-content').forEach(function(content) {
-                    content.classList.remove('active');
+                    content.style.maxHeight = '0';
+                    content.style.opacity = '0';
+                    content.style.padding = '0 20px';
                 });
 
                 // Show the clicked content
                 var targetId = box.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
+                var targetElement = document.getElementById(targetId);
+                targetElement.style.maxHeight = '1000px';
+                targetElement.style.opacity = '1';
+                targetElement.style.padding = '20px';
             });
         });
     </script>
