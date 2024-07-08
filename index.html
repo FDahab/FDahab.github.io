@@ -89,9 +89,14 @@
             height: 100%;
             object-fit: cover;
         }
+        .curriculum-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
         .curriculum-link {
             display: inline-block;
-            margin: 20px 0;
             padding: 10px 20px;
             background-color: #005bb5;
             color: white;
@@ -101,6 +106,11 @@
         }
         .curriculum-link:hover {
             background-color: #003f80;
+        }
+        .curriculum-description {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #ccc;
         }
         .fun-image {
             display: flex;
@@ -153,7 +163,7 @@
             <h2>About Me</h2>
             <div class="about-me-container">
                 <div class="about-me-image">
-                    <img src="./FundoCinza.png"> <!-- Replace with your image URL -->
+                    <img src="./FundoCinza.png" alt="Profile Image"> <!-- Replace with your image URL -->
                 </div>
                 <div class="about-me-text">
                     <p>Hello! I am Francisco Dahab, a Master's student at the Institute of Theoretical Physics of the São Paulo State University (<a href="https://www.ift.unesp.br/">IFT-UNESP</a>).
@@ -162,7 +172,16 @@
                     or you can access the Contact tab. But perhaps more interestingly, I'll try to compile a few nice problems and their solutions, as well as sometimes
                     discuss a few nice ideas in topics I find fun. If you have any comments on any topics I discuss, or find any problems with my solutions, please do get in touch.</p>
                 </div>
-                <a class="curriculum-link" href="path-to-your-curriculum.pdf" target="_blank">View My Curriculum</a>
+                <div class="curriculum-links">
+                    <div>
+                        <a class="curriculum-link" href="path-to-your-curriculum.pdf" target="_blank">Curriculum Vitae</a>
+                        <p class="curriculum-description">A detailed account of my professional experience and education.</p>
+                    </div>
+                    <div>
+                        <a class="curriculum-link" href="https://www.example.com" target="_blank">Curriculum Lattes</a>
+                        <p class="curriculum-description">My official academic curriculum, as maintained by the Brazilian research platform.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
