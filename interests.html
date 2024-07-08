@@ -95,7 +95,7 @@
         .interest-box {
             background-color: #005bb5;
             color: white;
-            padding: 20px;
+            padding: 15px; /* Adjust padding to make boxes vertically smaller */
             border-radius: 8px;
             cursor: pointer;
             flex: 1;
@@ -145,7 +145,8 @@
             <h2>My (Current) Interests</h2>
 
             <div class="intro-text" id="intro-text">
-                <p>Welcome to my interests page. Here you will find detailed information about the various topics I am currently interested in. Click on any of the boxes below to learn more about each interest.</p>
+                <p>Physics is an incredibly wide area, and even within High Energy Physics, interesting topics are far too many to list and elaborate on.
+                The idea here is to give a very brief overview of a few topics I am currently interested in and what, to me, makes them interesting and worth investigating.</p>
             </div>
 
             <div class="interest-boxes">
@@ -218,13 +219,17 @@
         // JavaScript for interactive content
         document.querySelectorAll('.interest-box').forEach(function(box) {
             box.addEventListener('click', function() {
+                // Hide the intro text
+                const introText = document.getElementById('intro-text');
+                if (introText) {
+                    introText.classList.remove('active');
+                    setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
+                }
+
                 // Hide all content sections
-                document.querySelectorAll('.intro-text, .interest-content').forEach(function(content) {
+                document.querySelectorAll('.interest-content').forEach(function(content) {
                     content.classList.remove('active');
                 });
-
-                // Hide the intro text immediately
-                document.getElementById('intro-text').style.display = 'none';
 
                 // Wait for the collapse animation to finish
                 setTimeout(() => {
