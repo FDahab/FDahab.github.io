@@ -71,9 +71,6 @@
             padding-bottom: 5px;
         }
         .contact-info {
-            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
-            padding: 20px;
-            border-radius: 8px;
             margin: 20px 0;
         }
         .contact-info p {
@@ -86,10 +83,11 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
-        .map {
-            margin: 20px 0;
+        .email-box, .address-box {
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
+            padding: 20px;
             border-radius: 8px;
-            overflow: hidden;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -111,24 +109,17 @@
         <section id="contact">
             <h2>Contact Me</h2>
 
-            <div class="contact-info">
+            <div class="email-box">
                 <p>If you would like to get in touch, please email me at <a href="mailto:f.dahab@unesp.br">f.dahab@unesp.br</a>.</p>
+            </div>
+
+            <div class="address-box">
                 <p>Address:</p>
                 <p>Institute of Theoretical Physics<br>
                 São Paulo State University (IFT-UNESP)<br>
                 Rua Dr. Bento Teobaldo Ferraz, 271<br>
                 Barra Funda, São Paulo - SP, 01140-070<br>
                 Brazil</p>
-            </div>
-
-            <div class="map">
-                <iframe
-                    width="100%"
-                    height="450"
-                    frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQB9jq4Bkd6_TVfVqkrn8y9vbbEHLaJ38
-                    &q=Institute+of+Theoretical+Physics+S%C3%A3o+Paulo+State+University,SP+Brazil" allowfullscreen>
-                </iframe>
             </div>
         </section>
     </div>
