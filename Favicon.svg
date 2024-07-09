@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="259.8927" height="224" viewBox="0 0 259.8927 224">
+<defs>
+<clipPath id="clip_0">
+<path transform="matrix(1,0,0,-1,0,224)" d="M53.94637 36H205.94637V188H53.94637Z"/>
+</clipPath>
+<clipPath id="clip_1">
+<path transform="matrix(1,0,0,-1,0,224)" d="M19.86036 75.47938H240.03235V201.75867H19.86036Z"/>
+</clipPath>
+<clipPath id="clip_2">
+<path transform="matrix(1,0,0,-1,0,224)" d="M63.51257 22.24134H196.38018V148.52063H63.51257Z"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip_0)">
+<path transform="matrix(1,0,0,-1,0,224)" d="M182.9794 165.033C212.2687 135.7437 212.2687 88.25631 182.9794 58.96699 153.6901 29.67767 106.2027 29.67767 76.91336 58.96699 47.62403 88.25631 47.62403 135.7437 76.91336 165.033 106.2027 194.3223 153.69 194.3223 182.9794 165.033ZM182.9794 165.033" fill="#ffffff"/>
+</g>
+<g clip-path="url(#clip_1)">
+<text fill="#005bb5" xml:space="preserve" transform="matrix(1 0 -0 1 85.15221 104.9657)" font-size="74.64478" font-family="CourierNewPSMT"><tspan y="0" x="0 44.79434">FN</tspan></text>
+</g>
+<g clip-path="url(#clip_2)">
+<text fill="#005bb5" xml:space="preserve" transform="matrix(1 0 -0 1 85.15221 158.20372)" font-size="74.64478" font-family="CourierNewPSMT"><tspan y="0" x="0 44.79434">CD</tspan></text>
+</g>
+</svg>
