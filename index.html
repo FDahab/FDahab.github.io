@@ -16,6 +16,11 @@
             color: #fff;
             display: flex;
             justify-content: center;
+            opacity: 0; /* Start hidden for fade-in effect */
+            transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+        }
+        .fade-in {
+            opacity: 1; /* Visible state for fade-in effect */
         }
         .content {
             max-width: 1000px;
@@ -164,7 +169,7 @@
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="content fade-in">
         <header>
             <h1>Francisco Neme Campos Dahab</h1>
             <p>Welcome to My Personal Page</p>
@@ -209,5 +214,11 @@
             <img src="./GradCoffebreak.jpg" alt="Going to leave this here for no particular reason"> <!-- Replace with your fun image URL -->
         </section>
     </div>
+    <script>
+        // JavaScript to add fade-in class on page load
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+    </script>
 </body>
 </html>
