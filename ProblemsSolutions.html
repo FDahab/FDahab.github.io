@@ -16,8 +16,8 @@
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Adjusted from center to flex-start */
-            height: 100vh; /* Full viewport height */
+            align-items: flex-start; /* Align items at the top */
+            min-height: 100vh; /* Full viewport height */
             opacity: 0; /* Start hidden for fade-in effect */
             transition: opacity 0.5s ease-in-out; /* Fade-in transition */
         }
@@ -35,6 +35,8 @@
             background-color: rgba(0, 91, 181, 0.8); /* Semi-transparent blue */
             color: white;
             border-radius: 8px 8px 0 0;
+            width: 100%; /* Ensure header takes full width */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         header h1 {
             margin: 0;
@@ -50,6 +52,8 @@
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
             padding: 10px;
             border-radius: 0 0 8px 8px;
+            width: 100%; /* Ensure nav takes full width */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
         nav a {
             color: #fff;
