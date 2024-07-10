@@ -79,14 +79,15 @@
         .collapsible {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
             margin: 10px 0;
-            padding: 10px;
+            padding: 0 10px; /* Initial padding for smooth transition */
             border-radius: 8px;
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.5s ease-out;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
         }
         .collapsible.open {
             max-height: 1000px; /* Large value to accommodate content */
+            padding: 10px; /* Add padding when open */
         }
         .problem-item {
             padding: 5px 0;
@@ -101,6 +102,13 @@
             padding: 10px;
             background-color: rgba(85, 85, 85, 0.8); /* Slightly darker semi-transparent grey */
             border-radius: 8px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
+        }
+        .problem-statement.open {
+            max-height: 500px; /* Adjust as needed */
+            padding: 10px;
         }
         .solution-link {
             display: inline-block;
@@ -205,29 +213,29 @@
 
             <h2>Quantum Mechanics</h2>
             <div class="collapsible">
-                <h3>Problem Topic 1.1</h3>
+                <h3>Problem Topic 3.1</h3>
                 <div class="collapsible">
-                    <div class="problem-item">Problem 1.1.1</div>
+                    <div class="problem-item">Problem 3.1.1</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.1.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 3.1.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution1.pdf" target="_blank">View Solution</a>
                     </div>
-                    <div class="problem-item">Problem 1.1.2</div>
+                    <div class="problem-item">Problem 3.1.2</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.1.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 3.1.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution2.pdf" target="_blank">View Solution</a>
                     </div>
                 </div>
-                <h3>Problem Topic 1.2</h3>
+                <h3>Problem Topic 3.2</h3>
                 <div class="collapsible">
-                    <div class="problem-item">Problem 1.2.1</div>
+                    <div class="problem-item">Problem 3.2.1</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.2.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 3.2.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution3.pdf" target="_blank">View Solution</a>
                     </div>
-                    <div class="problem-item">Problem 1.2.2</div>
+                    <div class="problem-item">Problem 3.2.2</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.2.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 3.2.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution4.pdf" target="_blank">View Solution</a>
                     </div>
                 </div>
@@ -235,29 +243,29 @@
 
             <h2>Quantum Field Theory</h2>
             <div class="collapsible">
-                <h3>Problem Topic 1.1</h3>
+                <h3>Problem Topic 4.1</h3>
                 <div class="collapsible">
-                    <div class="problem-item">Problem 1.1.1</div>
+                    <div class="problem-item">Problem 4.1.1</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.1.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 4.1.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution1.pdf" target="_blank">View Solution</a>
                     </div>
-                    <div class="problem-item">Problem 1.1.2</div>
+                    <div class="problem-item">Problem 4.1.2</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.1.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 4.1.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution2.pdf" target="_blank">View Solution</a>
                     </div>
                 </div>
-                <h3>Problem Topic 1.2</h3>
+                <h3>Problem Topic 4.2</h3>
                 <div class="collapsible">
-                    <div class="problem-item">Problem 1.2.1</div>
+                    <div class="problem-item">Problem 4.2.1</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.2.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 4.2.1. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution3.pdf" target="_blank">View Solution</a>
                     </div>
-                    <div class="problem-item">Problem 1.2.2</div>
+                    <div class="problem-item">Problem 4.2.2</div>
                     <div class="problem-statement">
-                        <p>This is the statement for Problem 1.2.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
+                        <p>This is the statement for Problem 4.2.2. It involves discussing the intricacies of the problem and presenting the details needed to understand it.</p>
                         <a class="solution-link" href="path/to/solution4.pdf" target="_blank">View Solution</a>
                     </div>
                 </div>
