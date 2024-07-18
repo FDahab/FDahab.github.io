@@ -276,9 +276,12 @@
                     section.classList.remove('open');
                 });
 
-                // Show the clicked section
-                var targetId = box.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('open');
+                // Wait for the collapse animation to finish
+                setTimeout(() => {
+                    // Show the clicked section
+                    var targetId = box.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('open');
+                }, 500); // Match this duration to the CSS transition duration
             });
         });
 
