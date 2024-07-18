@@ -70,6 +70,35 @@
             padding-bottom: 5px;
             cursor: pointer; /* Pointer cursor to indicate collapsible sections */
         }
+        .intro-text {
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: justify;
+            line-height: 1.6; /* Increase line height for better readability */
+            margin: 20px 0;
+        }
+        .resource-boxes {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .resource-box {
+            background-color: rgba(0, 91, 181, 0.8); /* Semi-transparent blue */
+            color: white;
+            padding: 15px; /* Adjust padding to make boxes vertically smaller */
+            border-radius: 8px;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .resource-box:hover {
+            background-color: rgba(0, 63, 128, 0.8); /* Slightly darker semi-transparent blue */
+        }
         .collapsible {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
             margin: 10px 0;
@@ -104,14 +133,6 @@
             max-height: 500px; /* Adjust as needed */
             padding: 10px;
         }
-        .intro-text {
-            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
-            padding: 20px;
-            border-radius: 8px;
-            text-align: justify;
-            line-height: 1.6; /* Increase line height for better readability */
-            margin: 20px 0;
-        }
     </style>
 </head>
 <body>
@@ -132,63 +153,74 @@
 
         <section id="intro">
             <div class="intro-text">
-                <p>Welcome to the Resources section. Here, you can find a collection of seminal papers, recommended textbooks, and useful online resources for various topics in physics. Click on one of the boxes to expand and see more details.</p>
+                <p>Welcome to the Resources section. Here, you can find a collection of seminal papers, recommended textbooks, and useful online resources for various topics in physics. Click on a topic to expand and see more details.</p>
             </div>
-        </section>
-
-        <section id="papers">
-            <h2>Recommended Papers</h2>
-            <div class="collapsible">
-                <h3>Paper Title 1</h3>
-                <div class="resource-description">
-                    <p>Description of Paper 1. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+            <div class="resource-boxes">
+                <div class="resource-box" data-target="papers">
+                    <h3>Papers</h3>
                 </div>
-                <h3>Paper Title 2</h3>
-                <div class="resource-description">
-                    <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                <div class="resource-box" data-target="textbooks">
+                    <h3>Textbooks</h3>
                 </div>
-            </div>
-        </section>
-
-        <section id="textbooks">
-            <h2>Recommended Textbooks</h2>
-            <div class="collapsible">
-                <h3>Electromagnetism</h3>
-                <div class="collapsible">
-                    <div class="resource-item">Textbook Title 1</div>
-                    <div class="resource-description">
-                        <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
-                    </div>
-                    <div class="resource-item">Textbook Title 2</div>
-                    <div class="resource-description">
-                        <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
-                    </div>
-                </div>
-                <h3>Quantum Mechanics</h3>
-                <div class="collapsible">
-                    <div class="resource-item">Textbook Title 1</div>
-                    <div class="resource-description">
-                        <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
-                    </div>
-                    <div class="resource-item">Textbook Title 2</div>
-                    <div class="resource-description">
-                        <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
-                    </div>
+                <div class="resource-box" data-target="online-resources">
+                    <h3>Online Resources</h3>
                 </div>
             </div>
         </section>
 
-        <section id="online-resources">
-            <h2>Online Resources</h2>
+        <section id="papers" class="collapsible">
+            <div class="intro-text">
+                <p>Here are some seminal and interesting papers that I recommend. Each paper includes a brief description of its importance and relevance.</p>
+            </div>
+            <h3>Paper Title 1</h3>
+            <div class="resource-description">
+                <p>Description of Paper 1. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+            </div>
+            <h3>Paper Title 2</h3>
+            <div class="resource-description">
+                <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+            </div>
+        </section>
+
+        <section id="textbooks" class="collapsible">
+            <div class="intro-text">
+                <p>Here are some recommended textbooks for various major areas in physics. Each recommendation includes a brief description of why I find it useful and which parts are particularly noteworthy.</p>
+            </div>
+            <h3>Electromagnetism</h3>
             <div class="collapsible">
-                <h3>Online Resource 1</h3>
+                <div class="resource-item">Textbook Title 1</div>
                 <div class="resource-description">
-                    <p>Description of Online Resource 1. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
                 </div>
-                <h3>Online Resource 2</h3>
+                <div class="resource-item">Textbook Title 2</div>
                 <div class="resource-description">
-                    <p>Description of Online Resource 2. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
                 </div>
+            </div>
+            <h3>Quantum Mechanics</h3>
+            <div class="collapsible">
+                <div class="resource-item">Textbook Title 1</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                </div>
+                <div class="resource-item">Textbook Title 2</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="online-resources" class="collapsible">
+            <div class="intro-text">
+                <p>Here are some recommended online resources for various topics in physics. Each recommendation includes a brief description of its usefulness and relevance.</p>
+            </div>
+            <h3>Online Resource 1</h3>
+            <div class="resource-description">
+                <p>Description of Online Resource 1. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+            </div>
+            <h3>Online Resource 2</h3>
+            <div class="resource-description">
+                <p>Description of Online Resource 2. Why it is useful, what topics it covers, and what makes it a good resource.</p>
             </div>
         </section>
     </div>
@@ -198,8 +230,29 @@
             document.body.classList.add('fade-in');
         });
 
-        // JavaScript for collapsible sections
-        document.querySelectorAll('h2, h3').forEach(function(header) {
+        // JavaScript for interactive content
+        document.querySelectorAll('.resource-box').forEach(function(box) {
+            box.addEventListener('click', function() {
+                // Hide the intro text
+                const introText = document.querySelector('#intro .intro-text');
+                if (introText) {
+                    introText.classList.remove('active');
+                    setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
+                }
+
+                // Hide all sections
+                document.querySelectorAll('.collapsible').forEach(function(section) {
+                    section.classList.remove('open');
+                });
+
+                // Show the clicked section
+                var targetId = box.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('open');
+            });
+        });
+
+        // JavaScript for collapsible subsections
+        document.querySelectorAll('h3').forEach(function(header) {
             header.addEventListener('click', function() {
                 var collapsible = header.nextElementSibling;
                 collapsible.classList.toggle('open');
