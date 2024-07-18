@@ -70,13 +70,21 @@
             padding-bottom: 5px;
             cursor: pointer; /* Pointer cursor to indicate collapsible sections */
         }
-        .intro-text {
+        .intro-text, .section-intro-text {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
             padding: 20px;
             border-radius: 8px;
             text-align: justify;
             line-height: 1.6; /* Increase line height for better readability */
             margin: 20px 0;
+            transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+            overflow: hidden;
+            max-height: 500px;
+        }
+        .intro-text.hidden, .section-intro-text.hidden {
+            opacity: 0;
+            max-height: 0;
+            padding: 0 20px;
         }
         .resource-boxes {
             display: flex;
@@ -133,6 +141,9 @@
             max-height: 500px; /* Adjust as needed */
             padding: 10px;
         }
+        .subsection {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -156,20 +167,20 @@
                 <p>Welcome to the Resources section. Here, you can find a collection of seminal papers, recommended textbooks, and useful online resources for various topics in physics. Click on a topic to expand and see more details.</p>
             </div>
             <div class="resource-boxes">
-                <div class="resource-box" data-target="papers">
+                <div class="resource-box" data-target="papers-section">
                     <h3>Papers</h3>
                 </div>
-                <div class="resource-box" data-target="textbooks">
+                <div class="resource-box" data-target="textbooks-section">
                     <h3>Textbooks</h3>
                 </div>
-                <div class="resource-box" data-target="online-resources">
+                <div class="resource-box" data-target="online-resources-section">
                     <h3>Online Resources</h3>
                 </div>
             </div>
         </section>
 
-        <section id="papers" class="collapsible">
-            <div class="intro-text">
+        <section id="papers-section" class="collapsible">
+            <div class="section-intro-text">
                 <p>Here are some seminal and interesting papers that I recommend. Each paper includes a brief description of its importance and relevance.</p>
             </div>
             <h3>Paper Title 1</h3>
@@ -182,36 +193,56 @@
             </div>
         </section>
 
-        <section id="textbooks" class="collapsible">
-            <div class="intro-text">
+        <section id="textbooks-section" class="collapsible">
+            <div class="section-intro-text">
                 <p>Here are some recommended textbooks for various major areas in physics. Each recommendation includes a brief description of why I find it useful and which parts are particularly noteworthy.</p>
             </div>
             <h3>Electromagnetism</h3>
-            <div class="collapsible">
+            <div class="collapsible subsection">
+                <h4>Undergraduate Level</h4>
                 <div class="resource-item">Textbook Title 1</div>
                 <div class="resource-description">
-                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
+                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the undergraduate level.</p>
                 </div>
                 <div class="resource-item">Textbook Title 2</div>
                 <div class="resource-description">
-                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
+                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the undergraduate level.</p>
+                </div>
+                <h4>Graduate Level</h4>
+                <div class="resource-item">Textbook Title 3</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 3. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the graduate level.</p>
+                </div>
+                <div class="resource-item">Textbook Title 4</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 4. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the graduate level.</p>
                 </div>
             </div>
             <h3>Quantum Mechanics</h3>
-            <div class="collapsible">
+            <div class="collapsible subsection">
+                <h4>Undergraduate Level</h4>
                 <div class="resource-item">Textbook Title 1</div>
                 <div class="resource-description">
-                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the undergraduate level.</p>
                 </div>
                 <div class="resource-item">Textbook Title 2</div>
                 <div class="resource-description">
-                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the undergraduate level.</p>
+                </div>
+                <h4>Graduate Level</h4>
+                <div class="resource-item">Textbook Title 3</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 3. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the graduate level.</p>
+                </div>
+                <div class="resource-item">Textbook Title 4</div>
+                <div class="resource-description">
+                    <p>Description of Textbook 4. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the graduate level.</p>
                 </div>
             </div>
         </section>
 
-        <section id="online-resources" class="collapsible">
-            <div class="intro-text">
+        <section id="online-resources-section" class="collapsible">
+            <div class="section-intro-text">
                 <p>Here are some recommended online resources for various topics in physics. Each recommendation includes a brief description of its usefulness and relevance.</p>
             </div>
             <h3>Online Resource 1</h3>
@@ -236,7 +267,7 @@
                 // Hide the intro text
                 const introText = document.querySelector('#intro .intro-text');
                 if (introText) {
-                    introText.classList.remove('active');
+                    introText.classList.add('hidden');
                     setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
                 }
 
