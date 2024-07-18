@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Francisco Neme Campos Dahab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./Favicon.svg" type="image/svg+xml" sizes="any"> <!-- Favicon -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('./ivana-cajina-asuyh-_ZX54-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            opacity: 0; /* Start hidden for fade-in effect */
+            transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+        }
+        .fade-in {
+            opacity: 1; /* Visible state for fade-in effect */
+        }
+        .content {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the content */
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 91, 181, 0.8); /* Semi-transparent blue */
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-weight: 500;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-weight: 300;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: rgba(85, 85, 85, 0.8); /* Slightly darker semi-transparent grey */
+            border-radius: 4px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        h2, h3 {
+            color: #fff; /* White color for the title text */
+            font-weight: 500;
+            border-bottom: 2px solid #005bb5; /* Blue underline */
+            padding-bottom: 5px;
+            cursor: pointer; /* Pointer cursor to indicate collapsible sections */
+        }
+        .collapsible {
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
+            margin: 10px 0;
+            padding: 0 10px; /* Initial padding for smooth transition */
+            border-radius: 8px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
+        }
+        .collapsible.open {
+            max-height: 1000px; /* Large value to accommodate content */
+            padding: 10px; /* Add padding when open */
+        }
+        .resource-item {
+            padding: 5px 0;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .resource-item:hover {
+            color: #ccc;
+        }
+        .resource-description {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(85, 85, 85, 0.8); /* Slightly darker semi-transparent grey */
+            border-radius: 8px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
+        }
+        .resource-description.open {
+            max-height: 500px; /* Adjust as needed */
+            padding: 10px;
+        }
+        .intro-text {
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: justify;
+            line-height: 1.6; /* Increase line height for better readability */
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content fade-in">
+        <header>
+            <h1>Francisco Neme Campos Dahab</h1>
+            <p>Resources</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="interests.html">Interests</a>
+            <a href="resources.html">Resources</a>
+            <a href="discussions.html">Discussions</a>
+            <a href="ProblemsSolutions.html">Problems & Solutions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <section id="intro">
+            <div class="intro-text">
+                <p>Welcome to the Resources section. Here, you can find a collection of seminal papers, recommended textbooks, and useful online resources for various topics in physics. Click on a topic to expand and see more details.</p>
+            </div>
+        </section>
+
+        <section id="papers">
+            <h2>Recommended Papers</h2>
+            <div class="collapsible">
+                <h3>Paper Title 1</h3>
+                <div class="resource-description">
+                    <p>Description of Paper 1. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                </div>
+                <h3>Paper Title 2</h3>
+                <div class="resource-description">
+                    <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="textbooks">
+            <h2>Recommended Textbooks</h2>
+            <div class="collapsible">
+                <h3>Electromagnetism</h3>
+                <div class="collapsible">
+                    <div class="resource-item">Textbook Title 1</div>
+                    <div class="resource-description">
+                        <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
+                    </div>
+                    <div class="resource-item">Textbook Title 2</div>
+                    <div class="resource-description">
+                        <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism.</p>
+                    </div>
+                </div>
+                <h3>Quantum Mechanics</h3>
+                <div class="collapsible">
+                    <div class="resource-item">Textbook Title 1</div>
+                    <div class="resource-description">
+                        <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                    </div>
+                    <div class="resource-item">Textbook Title 2</div>
+                    <div class="resource-description">
+                        <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="online-resources">
+            <h2>Online Resources</h2>
+            <div class="collapsible">
+                <h3>Online Resource 1</h3>
+                <div class="resource-description">
+                    <p>Description of Online Resource 1. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                </div>
+                <h3>Online Resource 2</h3>
+                <div class="resource-description">
+                    <p>Description of Online Resource 2. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        // JavaScript to add fade-in class on page load
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+
+        // JavaScript for collapsible sections
+        document.querySelectorAll('h2, h3').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var collapsible = header.nextElementSibling;
+                collapsible.classList.toggle('open');
+            });
+        });
+
+        // JavaScript to show resource descriptions on click
+        document.querySelectorAll('.resource-item').forEach(function(resourceItem) {
+            resourceItem.addEventListener('click', function() {
+                var description = resourceItem.nextElementSibling;
+                description.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
