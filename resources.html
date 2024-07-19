@@ -64,13 +64,12 @@
         section {
             margin: 20px 0;
         }
-        h2, h3, h4 {
+        h2, h3 {
             color: #fff; /* White color for the title text */
             font-weight: 500;
             border-bottom: 2px solid #005bb5; /* Blue underline */
             padding-bottom: 5px;
             cursor: pointer; /* Pointer cursor to indicate collapsible sections */
-            margin: 0; /* Ensure there's no extra margin */
         }
         .intro-text, .section-intro-text {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
@@ -195,15 +194,19 @@
             </div>
             <h3>"Baryons in the 1/N expansion" - Edward Witten</h3>
             <div class="resource-description">
-                <p>Description of Paper 3. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
             </div>
             <h3>"Renormalization and Effective Lagrangians" - Joseph Polchinski</h3>
             <div class="resource-description">
-                <p>Description of Paper 4. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+            </div>
+            <h3>"Renormalization and Effective Lagrangians" - Joseph Polchinski</h3>
+            <div class="resource-description">
+                <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
             </div>
             <h3>"Gedanken Worlds without Higgs: QCD-Induced Electroweak Symmetry Breaking" - Chris Quigg, Robert Shrock</h3>
             <div class="resource-description">
-                <p>Description of Paper 5. Why it is interesting, what topics it covers, and what makes it seminal.</p>
+                <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
             </div>
         </section>
 
@@ -295,7 +298,7 @@
                             // Show the clicked section
                             var targetId = box.getAttribute('data-target');
                             document.getElementById(targetId).classList.add('open');
-                        }, 0); // No wait time for smoother transition
+                        }, 500); // Short wait time for better transition
                     }, 500); // Hide intro text after transition
                 } else {
                     // If intro text is already hidden, directly show the clicked section
@@ -305,7 +308,7 @@
                     setTimeout(() => {
                         var targetId = box.getAttribute('data-target');
                         document.getElementById(targetId).classList.add('open');
-                    }, 0); // No wait time for smoother transition
+                    }, 500); // Short wait time for better transition
                 }
             });
         });
