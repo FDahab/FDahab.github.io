@@ -114,7 +114,7 @@
             border-radius: 8px;
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Adjusted transition time */
         }
         .collapsible.open {
             max-height: 1000px; /* Large value to accommodate content */
@@ -135,7 +135,7 @@
             border-radius: 8px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Reduced transition time */
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Adjusted transition time */
         }
         .resource-description.open {
             max-height: 500px; /* Adjust as needed */
@@ -281,7 +281,7 @@
                             // Show the clicked section
                             var targetId = box.getAttribute('data-target');
                             document.getElementById(targetId).classList.add('open');
-                        }, 100); // Short wait time for better transition
+                        }, 500); // Short wait time for better transition
                     }, 500); // Hide intro text after transition
                 } else {
                     // If intro text is already hidden, directly show the clicked section
@@ -291,7 +291,7 @@
                     setTimeout(() => {
                         var targetId = box.getAttribute('data-target');
                         document.getElementById(targetId).classList.add('open');
-                    }, 100); // Short wait time for better transition
+                    }, 500); // Short wait time for better transition
                 }
             });
         });
