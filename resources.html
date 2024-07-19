@@ -77,7 +77,7 @@
             text-align: justify;
             line-height: 1.6; /* Increase line height for better readability */
             margin: 20px 0;
-            transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+            transition: opacity 0.5s ease-out, max-height 0.5s ease-out, padding 0.5s ease-out;
             overflow: hidden;
             max-height: 500px;
         }
@@ -268,20 +268,31 @@
                 const introText = document.querySelector('#intro .intro-text');
                 if (introText) {
                     introText.classList.add('hidden');
-                    setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
+                    setTimeout(() => {
+                        introText.style.display = 'none';
+
+                        // Hide all sections
+                        document.querySelectorAll('.collapsible').forEach(function(section) {
+                            section.classList.remove('open');
+                        });
+
+                        // Wait for the collapse animation to finish
+                        setTimeout(() => {
+                            // Show the clicked section
+                            var targetId = box.getAttribute('data-target');
+                            document.getElementById(targetId).classList.add('open');
+                        }, 100); // Short wait time for better transition
+                    }, 500); // Hide intro text after transition
+                } else {
+                    // If intro text is already hidden, directly show the clicked section
+                    document.querySelectorAll('.collapsible').forEach(function(section) {
+                        section.classList.remove('open');
+                    });
+                    setTimeout(() => {
+                        var targetId = box.getAttribute('data-target');
+                        document.getElementById(targetId).classList.add('open');
+                    }, 100); // Short wait time for better transition
                 }
-
-                // Hide all sections
-                document.querySelectorAll('.collapsible').forEach(function(section) {
-                    section.classList.remove('open');
-                });
-
-                // Wait for the collapse animation to finish
-                setTimeout(() => {
-                    // Show the clicked section
-                    var targetId = box.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('open');
-                }, 500); // Match this duration to the CSS transition duration
             });
         });
 
