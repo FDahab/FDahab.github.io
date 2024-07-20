@@ -290,12 +290,11 @@
                             section.classList.remove('open');
                         });
 
-                        // Wait for the collapse animation to finish
+                        // Show the clicked section after intro text is hidden
+                        var targetId = box.getAttribute('data-target');
                         setTimeout(() => {
-                            // Show the clicked section
-                            var targetId = box.getAttribute('data-target');
                             document.getElementById(targetId).classList.add('open');
-                        }, 500); // Wait time for consistent transition
+                        }, 100); // Short wait time for better transition
                     }, 500); // Hide intro text after transition
                 } else {
                     // If intro text is already hidden, directly show the clicked section
@@ -305,7 +304,7 @@
                     setTimeout(() => {
                         var targetId = box.getAttribute('data-target');
                         document.getElementById(targetId).classList.add('open');
-                    }, 500); // Wait time for consistent transition
+                    }, 100); // Short wait time for better transition
                 }
             });
         });
