@@ -74,21 +74,19 @@
         }
         .intro-text, .section-intro-text {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
-            padding: 20px; /* Initially set padding for smooth transition */
+            padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
-            max-height: 0; /* Initially set max-height to 0 */
-            opacity: 0; /* Initially set opacity to 0 */
-            overflow: hidden; /* Hide overflowing content */
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add transition for smooth animation */
-        }
-        .intro-text.active, .section-intro-text.active {
-            max-height: 1000px; /* Large value to show content */
-            opacity: 1;
-        }
-        .intro-text p, .section-intro-text p {
-            color: #ccc;
             text-align: justify;
+            line-height: 1.6; /* Increase line height for better readability */
+            margin: 20px 0;
+            transition: opacity 0.5s ease-out, max-height 0.5s ease-out, padding 0.5s ease-out;
+            overflow: hidden;
+            max-height: 500px;
+        }
+        .intro-text.hidden, .section-intro-text.hidden {
+            opacity: 0;
+            max-height: 0;
+            padding: 0 20px;
         }
         .resource-boxes {
             display: flex;
@@ -118,7 +116,7 @@
             border-radius: 8px;
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Adjusted transition time */
+            transition: max-height 0.5s ease, padding 0.5s ease; /* Consistent transition time */
         }
         .collapsible.open {
             max-height: 1000px; /* Large value to accommodate content */
@@ -139,7 +137,7 @@
             border-radius: 8px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Adjusted transition time */
+            transition: max-height 0.5s ease, padding 0.5s ease; /* Consistent transition time */
         }
         .resource-description.open {
             max-height: 500px; /* Adjust as needed */
@@ -147,17 +145,6 @@
         }
         .subsection {
             padding-left: 20px;
-        }
-        p, ul {
-            line-height: 1.6;
-        }
-        a {
-            color: #005bb5;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -177,13 +164,10 @@
             <a href="contact.html">Contact</a>
         </nav>
 
-        <section id="resources">
-            <h2>Resources</h2>
-
-            <div class="intro-text" id="intro-text">
+        <section id="intro">
+            <div class="intro-text">
                 <p>Welcome to the Resources section. Here, you can find a collection of seminal papers, recommended textbooks, and useful online resources for various topics in physics. Click on a topic to expand and see more details.</p>
             </div>
-
             <div class="resource-boxes">
                 <div class="resource-box" data-target="papers-section">
                     <h3>Papers</h3>
@@ -294,24 +278,34 @@
         // JavaScript for interactive content
         document.querySelectorAll('.resource-box').forEach(function(box) {
             box.addEventListener('click', function() {
-                // Fade out the intro text
-                const introText = document.getElementById('intro-text');
+                // Hide the intro text
+                const introText = document.querySelector('#intro .intro-text');
                 if (introText) {
-                    introText.classList.remove('active');
-                    setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
+                    introText.classList.add('hidden');
+                    setTimeout(() => {
+                        introText.style.display = 'none';
+
+                        // Hide all sections
+                        document.querySelectorAll('.collapsible').forEach(function(section) {
+                            section.classList.remove('open');
+                        });
+
+                        // Show the clicked section after intro text is hidden
+                        var targetId = box.getAttribute('data-target');
+                        setTimeout(() => {
+                            document.getElementById(targetId).classList.add('open');
+                        }, 100); // Short wait time for better transition
+                    }, 500); // Hide intro text after transition
+                } else {
+                    // If intro text is already hidden, directly show the clicked section
+                    document.querySelectorAll('.collapsible').forEach(function(section) {
+                        section.classList.remove('open');
+                    });
+                    setTimeout(() => {
+                        var targetId = box.getAttribute('data-target');
+                        document.getElementById(targetId).classList.add('open');
+                    }, 100); // Short wait time for better transition
                 }
-
-                // Hide all content sections
-                document.querySelectorAll('.collapsible').forEach(function(content) {
-                    content.classList.remove('open');
-                });
-
-                // Wait for the collapse animation to finish
-                setTimeout(() => {
-                    // Show the clicked content
-                    var targetId = box.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('open');
-                }, 500); // Match this duration to the CSS transition duration
             });
         });
 
