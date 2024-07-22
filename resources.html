@@ -216,126 +216,82 @@
             <div class="resource-description">
                 <p>Description of Paper 2. Why it is interesting, what topics it covers, and what makes it seminal.</p>
             </div>
-            <h3>"Baryons in the 1/N expansion" - Edward Witten</h3>
-            <div class="resource-description">
-                <p>Description of Paper 3. Why it is interesting, what topics it covers, and what makes it seminal.</p>
-            </div>
-            <h3>"Renormalization and Effective Lagrangians" - Joseph Polchinski</h3>
-            <div class="resource-description">
-                <p>Description of Paper 4. Why it is interesting, what topics it covers, and what makes it seminal.</p>
-            </div>
-            <h3>"Gedanken Worlds without Higgs: QCD-Induced Electroweak Symmetry Breaking" - Chris Quigg, Robert Shrock</h3>
-            <div class="resource-description">
-                <p>Description of Paper 5. Why it is interesting, what topics it covers, and what makes it seminal.</p>
-            </div>
+            <!-- Add more papers as needed -->
         </section>
 
         <section id="textbooks-section" class="collapsible">
             <div class="section-intro-text">
-                <p>Here are some recommended textbooks for various major areas in physics. Each recommendation includes a brief description of why I find it useful and which parts are particularly noteworthy.</p>
+                <p>Here are some recommended textbooks covering various topics in physics. Each book includes a brief description of its importance and relevance.</p>
             </div>
-            <h3>Electromagnetism</h3>
-            <div class="collapsible subsection">
-                <h4>Undergraduate Level</h4>
-                <div class="resource-item">Textbook Title 1</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the undergraduate level.</p>
-                </div>
-                <div class="resource-item">Textbook Title 2</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the undergraduate level.</p>
-                </div>
-                <h4>Graduate Level</h4>
-                <div class="resource-item">Textbook Title 3</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 3. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the graduate level.</p>
-                </div>
-                <div class="resource-item">Textbook Title 4</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 4. Why it is useful, what topics it covers, and what makes it a good resource for Electromagnetism at the graduate level.</p>
-                </div>
+            <h3>"Quantum Field Theory" - Claude Itzykson and Jean-Bernard Zuber</h3>
+            <div class="resource-description">
+                <p>Description of Textbook 1. Why it is interesting, what topics it covers, and what makes it recommended.</p>
             </div>
-            <h3>Quantum Mechanics</h3>
-            <div class="collapsible subsection">
-                <h4>Undergraduate Level</h4>
-                <div class="resource-item">Textbook Title 1</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 1. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the undergraduate level.</p>
-                </div>
-                <div class="resource-item">Textbook Title 2</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 2. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the undergraduate level.</p>
-                </div>
-                <h4>Graduate Level</h4>
-                <div class="resource-item">Textbook Title 3</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 3. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the graduate level.</p>
-                </div>
-                <div class="resource-item">Textbook Title 4</div>
-                <div class="resource-description">
-                    <p>Description of Textbook 4. Why it is useful, what topics it covers, and what makes it a good resource for Quantum Mechanics at the graduate level.</p>
-                </div>
+            <h3>"Gravitation" - Charles W. Misner, Kip S. Thorne, and John Archibald Wheeler</h3>
+            <div class="resource-description">
+                <p>Description of Textbook 2. Why it is interesting, what topics it covers, and what makes it recommended.</p>
             </div>
+            <!-- Add more textbooks as needed -->
         </section>
 
         <section id="online-resources-section" class="collapsible">
             <div class="section-intro-text">
-                <p>Here are some recommended online resources for various topics in physics. Each recommendation includes a brief description of its usefulness and relevance.</p>
+                <p>Here are some useful online resources for learning and exploring various topics in physics. Each resource includes a brief description of its importance and relevance.</p>
             </div>
-            <h3>Online Resource 1</h3>
+            <h3>arXiv.org</h3>
             <div class="resource-description">
-                <p>Description of Online Resource 1. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                <p>Description of Online Resource 1. Why it is interesting, what topics it covers, and what makes it useful.</p>
             </div>
-            <h3>Online Resource 2</h3>
+            <h3>Physics Stack Exchange</h3>
             <div class="resource-description">
-                <p>Description of Online Resource 2. Why it is useful, what topics it covers, and what makes it a good resource.</p>
+                <p>Description of Online Resource 2. Why it is interesting, what topics it covers, and what makes it useful.</p>
             </div>
+            <!-- Add more online resources as needed -->
         </section>
     </div>
+
     <script>
-        // JavaScript to add fade-in class on page load
-        window.addEventListener('load', function() {
-            document.body.classList.add('fade-in');
-        });
-
-        // JavaScript for interactive content
-        document.querySelectorAll('.resource-box').forEach(function(box) {
-            box.addEventListener('click', function() {
-                // Hide the intro text
-                const introText = document.getElementById('intro-text');
-                if (introText) {
-                    introText.classList.remove('active');
-                    setTimeout(() => introText.style.display = 'none', 500); // Hide intro text after transition
-                }
-
-                // Hide all content sections
-                document.querySelectorAll('.collapsible').forEach(function(content) {
-                    content.classList.remove('open');
+        document.addEventListener("DOMContentLoaded", function() {
+            const resourceBoxes = document.querySelectorAll(".resource-box");
+            const collapsibleSections = document.querySelectorAll(".collapsible");
+            const headers = document.querySelectorAll("h2, h3, h4");
+            const introText = document.getElementById("intro-text");
+            
+            resourceBoxes.forEach(box => {
+                box.addEventListener("click", function() {
+                    const targetId = this.getAttribute("data-target");
+                    const targetSection = document.getElementById(targetId);
+                    
+                    collapsibleSections.forEach(section => {
+                        if (section !== targetSection) {
+                            section.classList.remove("open");
+                        }
+                    });
+                    
+                    if (targetSection) {
+                        targetSection.classList.toggle("open");
+                    }
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
                 });
-
-                // Wait for the collapse animation to finish
-                setTimeout(() => {
-                    // Show the clicked content
-                    var targetId = box.getAttribute('data-target');
-                    document.getElementById(targetId).classList.add('open');
-                }, 500); // Match this duration to the CSS transition duration
             });
-        });
-
-        // JavaScript for collapsible subsections
-        document.querySelectorAll('h3').forEach(function(header) {
-            header.addEventListener('click', function() {
-                var collapsible = header.nextElementSibling;
-                collapsible.classList.toggle('open');
+            
+            headers.forEach(header => {
+                header.addEventListener("click", function() {
+                    const nextElement = this.nextElementSibling;
+                    if (nextElement.classList.contains("section-intro-text") || nextElement.classList.contains("resource-description")) {
+                        nextElement.classList.toggle("open");
+                    }
+                });
             });
-        });
 
-        // JavaScript to show resource descriptions on click
-        document.querySelectorAll('.resource-item').forEach(function(resourceItem) {
-            resourceItem.addEventListener('click', function() {
-                var description = resourceItem.nextElementSibling;
-                description.classList.toggle('open');
-            });
+            // Show body content with a fade-in effect
+            setTimeout(function() {
+                document.body.classList.add("fade-in");
+            }, 10);
         });
     </script>
 </body>
