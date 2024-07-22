@@ -74,22 +74,21 @@
         }
         .intro-text, .section-intro-text {
             background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent grey */
-            padding: 0 20px; /* Initially keep padding 0 for transition effect */
+            padding: 20px; /* Initially set padding for smooth transition */
             border-radius: 8px;
             margin: 20px 0;
             max-height: 0; /* Initially set max-height to 0 */
             opacity: 0; /* Initially set opacity to 0 */
             overflow: hidden; /* Hide overflowing content */
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out; /* Add transition for smooth animation */
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add transition for smooth animation */
+        }
+        .intro-text.active, .section-intro-text.active {
+            max-height: 1000px; /* Large value to show content */
+            opacity: 1;
         }
         .intro-text p, .section-intro-text p {
             color: #ccc;
             text-align: justify;
-        }
-        .intro-text.active {
-            max-height: 1000px; /* Large value to show content */
-            opacity: 1;
-            padding: 20px;
         }
         .resource-boxes {
             display: flex;
@@ -159,11 +158,6 @@
         }
         a:hover {
             text-decoration: underline;
-        }
-        .active {
-            max-height: 1000px; /* Set max-height to a large value to show content */
-            opacity: 1;
-            padding: 20px;
         }
     </style>
 </head>
