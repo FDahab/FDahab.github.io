@@ -15,6 +15,8 @@
             background-size: cover; /* Cover the entire page */
             color: #fff;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full viewport height */
             justify-content: center;
             opacity: 0; /* Start hidden for fade-in effect */
             transition: opacity 0.5s ease-in-out; /* Fade-in transition */
@@ -27,6 +29,8 @@
             max-width: 1000px;
             width: 100%;
             padding: 20px;
+            flex-grow: 1;
+            margin: 0 auto;
         }
         header {
             text-align: center;
@@ -216,6 +220,10 @@
             </div>
         </section>
     </div>
+    <footer>
+        © 2024-2024 Francisco Dahab<br>
+        For noncommercial use only
+    </footer>
     <script>
         // JavaScript to add fade-in class on page load
         window.addEventListener('load', function() {
