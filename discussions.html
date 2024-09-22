@@ -34,19 +34,10 @@
         }
         header {
             text-align: center;
-            padding: 20px; /* Reduced padding to match the original index page */
+            padding: 20px; 
             background-color: rgba(0, 91, 181, 0.8);
             color: white;
             border-radius: 8px 8px 0 0;
-        }
-        header h1 {
-            margin: 0;
-            font-weight: 500;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-weight: 300;
-            font-size: 0.9em; /* Adjusted font size to match the original index */
         }
         nav {
             display: flex;
@@ -97,21 +88,28 @@
         }
         .discussion-link {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             padding: 10px;
             background-color: #444;
             margin: 5px 0;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
         .discussion-link:hover {
             background-color: #555;
         }
         .discussion-title {
-            flex: 1;
             color: #fff;
             text-decoration: none;
+            display: block;
+        }
+        .summary-content {
+            display: none;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            margin-top: 5px;
         }
         .view-pdf {
             padding: 5px 10px;
@@ -121,6 +119,8 @@
             border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
         }
         .view-pdf:hover {
             background-color: #003f80;
@@ -161,11 +161,17 @@
                 <div class="accordion-content">
                     <div class="discussion-link">
                         <span class="discussion-title">Introduction to Lagrangian Mechanics</span>
-                        <button class="view-pdf" onclick="window.open('./Lagrangian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                        <div class="summary-content">
+                            <p>The Lagrangian mechanics reformulates classical mechanics, providing a powerful method to analyze physical systems. It introduces generalized coordinates and provides a different perspective from Newtonian mechanics.</p>
+                            <button class="view-pdf" onclick="window.open('./Lagrangian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                        </div>
                     </div>
                     <div class="discussion-link">
                         <span class="discussion-title">Hamiltonian Formulation of Classical Mechanics</span>
-                        <button class="view-pdf" onclick="window.open('./Hamiltonian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                        <div class="summary-content">
+                            <p>The Hamiltonian formulation presents another way of expressing classical mechanics. It's especially useful for transitioning to quantum mechanics and is based on energy functions instead of forces.</p>
+                            <button class="view-pdf" onclick="window.open('./Hamiltonian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,11 +182,17 @@
                 <div class="accordion-content">
                     <div class="discussion-link">
                         <span class="discussion-title">The Basics of Quantum Entanglement</span>
-                        <button class="view-pdf" onclick="window.open('./Quantum_Entanglement.pdf', '_blank')">View Full PDF</button>
+                        <div class="summary-content">
+                            <p>Quantum entanglement is a fascinating phenomenon where particles become interconnected such that the state of one particle instantly influences the state of another, regardless of the distance.</p>
+                            <button class="view-pdf" onclick="window.open('./Quantum_Entanglement.pdf', '_blank')">View Full PDF</button>
+                        </div>
                     </div>
                     <div class="discussion-link">
                         <span class="discussion-title">Schrodinger's Equation Explained</span>
-                        <button class="view-pdf" onclick="window.open('./Schrodingers_Equation.pdf', '_blank')">View Full PDF</button>
+                        <div class="summary-content">
+                            <p>Schrodinger's equation is the foundation of non-relativistic quantum mechanics. It describes how the quantum state of a physical system changes over time.</p>
+                            <button class="view-pdf" onclick="window.open('./Schrodingers_Equation.pdf', '_blank')">View Full PDF</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,11 +208,15 @@
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        });
+
+        // JavaScript to toggle the visibility of discussion summaries
+        document.querySelectorAll('.discussion-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const summary = link.querySelector('.summary-content');
+                summary.style.display = summary.style.display === "block" ? "none" : "block";
             });
         });
 
