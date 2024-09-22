@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussions - Francisco Neme Campos Dahab's Personal Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon-1024.png" type="image/png" sizes="1024x1024">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('./ivana-cajina-asuyh-_ZX54-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            overscroll-behavior-y: none;
+        }
+        .fade-in {
+            opacity: 1;
+        }
+        .content {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            flex-grow: 1;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 91, 181, 0.8);
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(68, 68, 68, 0.8);
+            padding: 10px;
+            border-radius: 0 0 8px 8px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: rgba(85, 85, 85, 0.8);
+            border-radius: 4px;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(68, 68, 68, 0.8);
+            border-radius: 8px;
+        }
+        .accordion {
+            margin: 20px 0;
+        }
+        .accordion-item {
+            margin-bottom: 10px;
+            background-color: rgba(0, 91, 181, 0.8);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            background-color: rgba(0, 91, 181, 0.9);
+        }
+        .accordion-header:hover {
+            background-color: rgba(0, 91, 181, 1);
+        }
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: rgba(68, 68, 68, 0.8);
+        }
+        .discussion-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #444;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .discussion-link:hover {
+            background-color: #555;
+        }
+        .discussion-title {
+            flex: 1;
+            color: #fff;
+            text-decoration: none;
+        }
+        .view-pdf {
+            padding: 5px 10px;
+            background-color: #005bb5;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .view-pdf:hover {
+            background-color: #003f80;
+        }
+        footer {
+            text-align: center;
+            background-color: rgba(0, 91, 181, 0.8);
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content fade-in">
+        <header>
+            <h1>Francisco Neme Campos Dahab</h1>
+            <p>Welcome to the Discussions Section</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="interests.html">Interests</a>
+            <a href="resources.html">Resources</a>
+            <a href="discussions.html">Discussions</a>
+            <a href="ProblemsSolutions.html">Problems & Solutions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <section id="discussion-intro">
+            <h2>Discussion Topics</h2>
+            <p>This section features discussions on various major subjects in physics. Select a topic of interest to explore more about each subject and delve into insightful discussions. Click on the subject headers to expand and find discussions, then open the PDF files to access the full discussions.</p>
+        </section>
+
+        <section class="accordion">
+            <!-- Example Subject 1: Classical Mechanics -->
+            <div class="accordion-item">
+                <div class="accordion-header">Classical Mechanics</div>
+                <div class="accordion-content">
+                    <div class="discussion-link">
+                        <span class="discussion-title">Introduction to Lagrangian Mechanics</span>
+                        <button class="view-pdf" onclick="window.open('./Lagrangian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                    </div>
+                    <div class="discussion-link">
+                        <span class="discussion-title">Hamiltonian Formulation of Classical Mechanics</span>
+                        <button class="view-pdf" onclick="window.open('./Hamiltonian_Mechanics.pdf', '_blank')">View Full PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Subject 2: Quantum Mechanics -->
+            <div class="accordion-item">
+                <div class="accordion-header">Quantum Mechanics</div>
+                <div class="accordion-content">
+                    <div class="discussion-link">
+                        <span class="discussion-title">The Basics of Quantum Entanglement</span>
+                        <button class="view-pdf" onclick="window.open('./Quantum_Entanglement.pdf', '_blank')">View Full PDF</button>
+                    </div>
+                    <div class="discussion-link">
+                        <span class="discussion-title">Schrodinger's Equation Explained</span>
+                        <button class="view-pdf" onclick="window.open('./Schrodingers_Equation.pdf', '_blank')">View Full PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional subjects can be added in a similar manner -->
+        </section>
+    </div>
+    <footer>
+        © 2024-2024 Francisco Dahab<br>
+        For noncommercial use only
+    </footer>
+
+    <script>
+        // JavaScript to handle accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+
+        // JavaScript to add fade-in class on page load
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>
