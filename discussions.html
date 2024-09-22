@@ -34,7 +34,7 @@
         }
         header {
             text-align: center;
-            padding: 20px;
+            padding: 20px; /* Restored to original padding */
             background-color: rgba(0, 91, 181, 0.8); 
             color: white;
             border-radius: 8px 8px 0 0;
@@ -46,7 +46,7 @@
         header p {
             margin: 10px 0 0;
             font-weight: 300;
-            font-size: 0.9em;
+            font-size: 0.9em; /* Matching original font size */
         }
         nav {
             display: flex;
@@ -91,28 +91,22 @@
             background-color: rgba(0, 91, 181, 1);
         }
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 10px;
-            background-color: rgba(68, 68, 68, 0.8);
-            transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth expand/collapse */
-        }
-        .accordion-content.show {
-            max-height: 1000px; /* Adjust as needed to ensure all content fits */
+            display: none;
             padding: 10px;
+            background-color: rgba(68, 68, 68, 0.8);
         }
         .discussion-link {
             display: flex;
             flex-direction: column;
             padding: 10px;
-            background-color: #555;
+            background-color: #555; /* Lightened background color */
             margin: 5px 0;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             cursor: pointer;
         }
         .discussion-link:hover {
-            background-color: #666;
+            background-color: #666; /* Slightly lighter on hover */
         }
         .discussion-title {
             color: #fff;
@@ -120,10 +114,10 @@
             display: block;
         }
         .summary-content {
-            max-height: 0;
+            max-height: 0; 
             overflow: hidden;
             padding: 0 10px;
-            background-color: #666;
+            background-color: #666; /* Lighter than the original dark color */
             border-radius: 5px;
             margin-top: 5px;
             transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth expand/collapse */
